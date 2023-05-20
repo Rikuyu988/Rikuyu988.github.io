@@ -1,0 +1,174 @@
+/* 1.首页index标签样式 */
+ /* 选择器 ：1.标签2.类选择器-class=""3.id选择器4.*选择器 */
+.syp {
+    /* 缩进 text-align: 32em;*/
+    color:white;
+    font-size:xx-large;
+    margin-top:302px;
+    width: 650px;
+    height: 132px;
+    font-family:黑体;
+    line-height: 1.2;
+}
+/* 立即加入按钮样式 */
+.sybutton {
+    background-color: #d7d6ee;
+    color:#0a387a;
+    font-size:xx-large;
+    margin-top:72px;
+    margin-left:220px;
+    border: 3px solid #56545f;
+    border-radius: 13px;
+    transition: 0.2s;
+}
+/* 底部当面科技公司样式 */
+.syfoot {
+    color:white;
+    margin-bottom: 170px;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+/* 2.secondpage.html的样式 */
+.jieshao{
+    color: #ddd8f1;
+    font-family: 黑体;
+    line-height: 1.5;
+}
+.choice{
+    margin-top: 300px;
+    margin-left: 260px;
+    width: 600px; 
+    height: 132px; 
+    line-height: 3.0;
+}
+.secondfoot {
+    color:black;
+    margin-top: 290px;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+.secondbutton{
+    font-size: x-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    color: #0a387a;
+}
+/* 3.登录界面和注册界面 */
+/*.dlbody {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+}*/
+
+.dlzc-container {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	margin: 50px auto;
+	max-width: 400px;
+	text-align: center;
+    margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.dlzcbody {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    margin-top: 120px;
+    text-align: center;
+}
+
+.select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    color: #2d528f;
+    background-color: #f2f2f2;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #2d528f;
+    color: #f2f2f2;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2d528f;
+}
+
+/* 功能页面 */
+.third-link{
+    text-decoration: none; /* 去除下划线 */
+    color: #0a387a; /* 设置颜色 */
+    font-weight: bold; /* 加粗字体 */
+    overflow: hidden;
+    font-size:14px;
+}
+.app-name{
+    text-align: center;
+}
+.app-name-link{
+    text-decoration: none;
+    color: #0a387a;
+}
+.sidebar{
+    /* flex:1; */
+    padding-top: 0;
+    width:220px;
+    color:#364149;
+    background-color: #fff;
+    top:0;
+    bottom: 0;
+    left:-300px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+.search input{
+    font-size: 14px;
+    line-height: 10px;
+    border: 1px solid transparent;
+}
+.jieshaowenzi{
+    text-indent: 2em;
+    
+}
+.search{
+    margin-bottom: 20px;
+    padding: 6px;
+    border-bottom: 1px solid #eee;
+}
+.search .input-wrap{
+    display: flex;
+    align-items: center;
+}
+.content{
+    flex:3;
+    max-width: 400px;
+    position: static;
+    padding-top: 10px;
+    transition: transform .25s ease;
+    position: absolute;
+    left: 300px;
+        /*不知道什么意思  */
+    
+}
