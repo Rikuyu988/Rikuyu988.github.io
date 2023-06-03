@@ -3,75 +3,194 @@
 
 <head>
     <title>竞赛学生</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+    <!-- 引入 Bootstrap 的 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+    <script src="example.js"></script>
+    <!-- 添加自定义样式 -->
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 </head>
 
 <body>
     <header>
-        <h1>竞赛学生页面</h1>
+        <h1>当面--竞赛生</h1>
+        <h4>Data 、Security +，为用户提供个性化服务</h4>
     </header>
+    <script src="example.js"></script>
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">竞赛学生页面</a>
+            <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#skills">个人技能展示</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#history">过往比赛经历</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">联系方式</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#status">状态描述</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#channel">沟通渠道</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#points">个人积分量化</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forum.html">学生论坛</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#account">个人账户</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-    <nav>
-        <ul>
-            <li><a href="#skills">个人技能展示</a></li>
-            <li><a href="#history">过往比赛经历</a></li>
-            <li><a href="#contact">联系方式</a></li>
-            <li><a href="#status">状态描述</a></li>
-            <li><a href="#channel">沟通渠道</a></li>
-            <li><a href="#points">个人积分量化</a></li>
-            <li><a href="#forum">学生论坛</a></li>
-        </ul>
-    </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" id="skills">
+                    <h2>个人技能展示</h2>
+                    <p>在这里你可以展示你的技能，让更多人了解你的能力。</p>
+                    <img src="skill.png" alt="Skill Showcase">
+                    <button type="button">添加技能</button>
+                </div>
+                <div class="col-md-6" id="history">
+                    <h2>过往比赛经历</h2>
+                    <p>在这里分享您参加过的比赛经历或提交参赛佐证资料，让更多人了解您的成长历程。</p>
+                    <img src="history.png" alt="Competition History">
+                    <button type="button">查看更多经历</button>
+                    <button type="button">添加比赛</button>
+                    <button type="button">提交参赛佐证资料</button>
+                </div>
+            </div>
+        </div>
 
-    <section class="card" id="skills">
-        <h2>个人技能展示</h2>
-        <p>在这里你可以展示你的技能，让更多人了解你的能力。</p>
-        <img src="skill.png" alt="Skill Showcase">
-        <button>添加技能</button>
-    </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" id="contact">
+                    <h2>联系方式</h2>
+                    <p>在这里添加或者修改您的联系方式。</p>
+                    <img src="contact.png" alt="Contact information">
+                    <button type="button">添加/修改</button>
+                </div>
+                <div class="col-md-6" id="status">
+                    <h2>状态描述</h2>
+                    <p>比赛类：未参赛/已参赛（正在参赛的个数，自定义）/暂时不想参赛 组队类：求组队/已有队伍/与队伍接洽中</p>
+                    <img src="status.png" alt="Status discription">
+                    <button type="button">修改</button>
+                </div>
+            </div>
+        </div>
 
-    <section class="card" id="history">
-        <h2>过往比赛经历</h2>
-        <p>在这里分享您参加过的比赛经历或提交参赛佐证资料，让更多人了解您的成长历程。</p>
-        <img src="history.png" alt="Competition History">
-        <button>查看更多经历</button>
-    </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" id="channel">
+                    <h2>沟通渠道</h2>
+                    <p>开通后，可查看对方的账号信息。</p>
+                    <img src="channel.png" alt="Communication channels">
+                    <button type="button">开通</button>
+                </div>
+                <div class="col-md-6" id="points">
+                    <h2>个人积分量化</h2>
+                    <p>在这里查看竞赛积分。根据比赛经历量化，根据量化后的分数进行排序</p>
+                    <img src="history.png" alt="Competition History">
+                    <button type="button">查看具体排行</button>
+                </div>
+                <div class="col-md-6" id="forum.html">
+                    <h2>学生论坛</h2>
+                    <p>在这里你可以与其他竞赛学生交流和讨论，分享经验和知识。</p>
+                    <a href="forum.html" target="_blank"><button type="button" class="btn btn-success">进入论坛</button></a>
+                </div>
+            </div>
+        </div>
 
-    <section class="card" id="contact">
-        <h2>联系方式</h2>
-        <p>在这里添加或者修改您的联系方式。</p>
-        <img src="contact.png" alt="Contact information">
-        <button>添加/修改</button>
-    </section>
-    <section class="card" id="status">
-        <h2>状态描述</h2>
-        <p>比赛类：未参赛/已参赛（正在参赛的个数，自定义）/暂时不想参赛
-            组队类：求组队/已有队伍/与队伍接洽中
-        </p>
-        <img src="status.png" alt="Status discription">
-        <button>修改</button>
-    </section>
-    <section class="card" id="channel">
-        <h2>沟通渠道</h2>
-        <p>开通后，可查看对方的账号信息。</p>
-        <img src="channel.png" alt="Communication channels">
-        <button>开通</button>
-    </section>
-    <section class="card" id="points">
-        <h2>个人积分量化</h2>
-        <p>在这里查看竞赛积分。根据比赛经历量化，根据量化后的分数进行排序</p>
-        <img src="history.png" alt="Competition History">
-        <button>查看具体排行</button>
-    </section>
-    <section class="card" id="forum">
-        <h2>学生论坛</h2>
-        <p>在这里你可以与其他竞赛学生交流和讨论，分享经验和知识。</p>
-        <a href="forum.html"><button>进入论坛</button></a>
-    </section>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" id="account">
+                    <h2>个人账户</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" class="form-control" id="email" placeholder="请输入邮箱">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">性别</label>
+                            <select class="form-control" id="gender">
+                                <option>男</option>
+                                <option>女</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">年龄：</label>
+                            <input type="number" id="age" name="age" min="0" class="form-control"><br><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="grade">年级：</label>
+                            <input type="text" id="grade" name="grade" class="form-control"><br><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="major">专业：</label>
+                            <input type="text" id="major" name="major" class="form-control"><br><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="school">学校：</label>
+                            <input type="text" id="school" name="school" class="form-control"><br><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-type">学生类型：</label>
+                            <select id="student-type" name="student-type" class="form-control">
+                                <option value="undergraduate">本科生</option>
+                                <option value="graduate">研究生</option>
+                                <option value="others">其他</option>
+                            </select><br><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-id">个人用户ID：</label>
+                            <input type="text" id="user-id" name="user-id" class="form-control" readonly><br><br>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="modify-info-checkbox">
+                            <label class="form-check-label" for="modify-info-checkbox">修改个人信息</label>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="modify-info-btn"
+                            style="display:none;">修改</button>
+                        <button type="submit" class="btn btn-success">保存</button>
+                        <button type="reset" class="btn btn-danger">重置</button>
+                    </form>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary">注销账号</button>
+                        <button type="button" class="btn btn-secondary">修改密码/找回密码</button>
+                        <button type="button" class="btn btn-secondary">更改头像</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer>
         <p>&copy; 2023 当面科技. All rights reserved.</p>
     </footer>
 </body>
+<script src="example.js"></script>
 
 </html>

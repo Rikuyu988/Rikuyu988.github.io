@@ -2,40 +2,109 @@
 <html>
 
 <head>
-    <title>学生论坛</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<title>学生论坛</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 引入 Bootstrap 的 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header>
-        <h1>学生论坛</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#灌水区">灌水区</a></li>
-            <li><a href="#竞赛信息发布">竞赛信息发布</a></li>
-            <li><a href="#组队/找人信息发布">组队/找人信息发布</a></li>
-        </ul>
-    </nav>
-    <section class="container">
-        <section class="card" id="灌水区">
-            <h2>灌水区</h2>
-            <p>这里是让你自由发挥的地方，可以聊天、吐槽、分享趣事等等。</p>
-            <a href="#">进入灌水区</a>
-        </section>
-        <section class="card" id="竞赛信息发布">
-            <h2>竞赛信息发布</h2>
-            <p>这里发布各种竞赛信息，包括但不限于编程竞赛、科技竞赛、体育竞赛等。</p>
-            <a href="#">查看竞赛信息</a>
-        </section>
-        <section class="card" id="组队/找人信息发布">
-            <h2>组队/找人信息发布</h2>
-            <p>这里可以发布组队信息，寻找志同道合的伙伴一起参加各种活动。</p>
-            <a href="#">查看组队信息</a>
-        </section>
-        <footer class="footer">
-            <p>&copy; 2023 当面科技. All rights reserved.</p>
-        </footer>
+<header class="container-fluid bg-primary text-light">
+<div class="row">
+<div class="col-12 text-center">
+<h1>学生论坛</h1>
+</div>
+</div>
+</header>
+<nav class="container mb-3">
+<ul class="nav nav-tabs">
+<li class="nav-item"><a class="nav-link" href="#灌水区">灌水区</a></li>
+<li class="nav-item"><a class="nav-link" href="#竞赛信息发布">竞赛信息发布</a></li>
+<li class="nav-item"><a class="nav-link" href="#组队/找人信息发布">组队/找人信息发布</a></li>
+</ul>
+</nav>
+<section class="container">
+<div class="card-deck">
+<div class="card" id="灌水区">
+<div class="card-body">
+<h2 class="card-title">灌水区</h2>
+<p class="card-text">这里是让你自由发挥的地方，可以聊天、吐槽、分享趣事等等。</p>
+<a href="./forum1.html" class="btn btn-primary stretched-link">进入灌水区</a>
+</div>
+</div>
+<div class="card" id="竞赛信息发布">
+<div class="card-body">
+<h2 class="card-title">竞赛信息发布</h2>
+<p class="card-text">欢迎在此发布各种竞赛信息，包括但不限于编程竞赛、科技竞赛、体育竞赛等。请在下方表单中填写相关信息。</p>
+<form>
+<div class="form-group">
+<label for="comp_title">比赛标题</label>
+<input type="text" class="form-control" id="comp_title">
+</div>
+<div class="form-group">
+<label for="comp_type">比赛类型</label>
+<select class="form-control" id="comp_type">
+<option>编程竞赛</option>
+<option>科技竞赛</option>
+<option>体育竞赛</option>
+<option>其它竞赛</option>
+</select>
+</div>
+<div class="form-group">
+<label for="comp_date">比赛时间</label>
+<input type="date" class="form-control" id="comp_date">
+</div>
+<div class="form-group">
+<label for="comp_loc">比赛地点</label>
+<input type="text" class="form-control" id="comp_loc">
+</div>
+<div class="form-group">
+<label for="comp_info">比赛简介</label>
+<textarea class="form-control" id="comp_info"></textarea>
+</div>
+<button type="submit" class="btn btn-primary">发布</button>
+</form>
+</div>
+</div>
+<div class="card" id="组队/找人信息发布">
+<div class="card-body">
+<h2 class="card-title">组队/找人信息发布</h2>
+<p class="card-text">欢迎在此发布组队信息，寻找志同道合的伙伴一起参加各种活动。请在下方表单中填写相关信息。</p>
+<form>
+<div class="form-group">
+<label for="team_type">活动类型</label>
+<select class="form-control" id="team_type">
+<option>编程活动</option>
+<option>科技活动</option>
+<option>体育活动</option>
+<option>其它活动</option>
+</select>
+</div>
+<div class="form-group">
+<label for="team_date">活动时间</label>
+<input type="date" class="form-control" id="team_date">
+</div>
+<div class="form-group">
+<label for="team_loc">活动地点</label>
+<input type="text" class="form-control" id="team_loc">
+</div>
+<div class="form-group">
+<label for="team_info">活动简介</label>
+<textarea class="form-control" id="team_info"></textarea>
+</div>
+<button type="submit" class="btn btn-primary">发布</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="container-fluid bg-light mt-3 py-2">
+<p class="text-center">© 2023 当面科技. All rights reserved.</p>
+</footer>
+<!-- 引入 Bootstrap 的 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </body>
 
 </html>

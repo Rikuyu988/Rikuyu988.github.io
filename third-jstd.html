@@ -1,61 +1,225 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>竞赛团队</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>当面--竞赛团队</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            font-weight: bold;
+        }
+
+        .team-status {
+            margin-left: 10px;
+            font-size: 12px;
+            border-radius: 10px;
+            padding: 2px 8px;
+            color: white;
+        }
+
+        .full {
+            background-color: green;
+        }
+
+        .lack {
+            background-color: red;
+        }
+    </style>
+       <script>
+        $(document).ready(function () {
+            // 点击“查看团队积分榜单”按钮时，显示团队积分榜单
+            showScoreList = function () {
+                alert("这是团队积分榜单。");
+            }
+            // 点击“计算团队积分”按钮时，计算团队积分并显示结果
+            calculateScore = function () {
+                var score1 = parseInt($("#score1").val());
+                var ratio1 = parseFloat($("#ratio1").val()) / 100;
+                var score2 = parseInt($("#score2").val());
+                var ratio2 = parseFloat($("#ratio2").val()) / 100;
+                var score3 = parseInt($("#score3").val());
+                var ratio3 = parseFloat($("#ratio3").val()) / 100;
+                var resultScore = Math.round((score1 * ratio1 + score2 * ratio2 + score3 * ratio3) * 100) / 100;
+                $("#result-score").text(resultScore);
+                $("#score-form").hide();
+                $("#score-result").show();
+            }
+            // 根据团队状态，显示不同的标签
+            showTeamStatus = function () {
+                $(".team-status").each(function () {
+                    if ($(this).data("status") == "full") {
+                        $(this).addClass("full").text("已满员");
+                    } else if ($(this).data("status") == "lack") {
+                        $(this).addClass("lack").text("缺少队员");
+                    } else {
+                        $(this).remove();
+                    }
+                });
+            }
+            showTeamStatus();
+        });
+    </script>
 </head>
+
 <body>
-	<header>
-		<h1>竞赛团队</h1>
-		<nav>
-			<ul>
-				<li><a href="#">首页</a></li>
-				<li><a href="#">团队</a></li>
-				<li><a href="#">比赛</a></li>
-				<li><a href="#">积分榜</a></li>
-				<li><a href="#">联系我们</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<section id="login">
-			<h2>登录</h2>
-			<form>
-				<label for="username">用户名：</label>
-				<input type="text" id="username" name="username"><br>
-				<label for="password">密码：</label>
-				<input type="password" id="password" name="password"><br>
-				<input type="submit" value="登录">
-			</form>
-		</section>
-		<section id="register">
-			<h2>注册</h2>
-			<form>
-				<label for="teamname">团队名：</label>
-				<input type="text" id="teamname" name="teamname"><br>
-				<label for="email">邮箱：</label>
-				<input type="email" id="email" name="email"><br>
-				<label for="password">密码：</label>
-				<input type="password" id="password" name="password"><br>
-				<input type="submit" value="注册">
-			</form>
-		</section>
-		<section id="communication">
-			<h2>团队沟通</h2>
-			<p>在这里可以与团队成员进行沟通。</p>
-			<textarea></textarea>
-			<input type="submit" value="发送">
-		</section>
-		<section id="score">
-			<h2>团队积分</h2>
-			<p>当前积分：1000</p>
-			<p>上次比赛得分：200</p>
-			<p>历史最高分：1200</p>
-		</section>
-	</main>
-	<footer>
-		<p>&copy; 2023 当面科技. All rights reserved.</p>
-	</footer>
+    <header>
+        <h1>竞赛团队</h1>
+        <h4>DataSecurity+，为用户提供个性化服务</h4>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">竞赛团队首页</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#login">登录</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#register">注册</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#外部沟通">外部沟通</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#团队积分量化">团队积分量化</a>
+                </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        团队信息
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#password">修改密码/找回密码</a>
+                        <a class="dropdown-item" href="#team">注册竞赛团队</a>
+                        <a class="dropdown-item" href="#avatar">更改头像</a>
+                        <a class="dropdown-item" href="#team-name">填写团队名字</a>
+                        <a class="dropdown-item" href="#team-status">填写团队状态</a>
+                        <a class="dropdown-item" href="#logout">注销竞赛团队</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <section id="login" class="card">
+                    <h2 class="card-header">登录竞赛团队</h2>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="username">用户名：</label>
+                                <input type="text" id="username" name="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">密码：</label>
+                                <input type="password" id="password" name="password" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">登录</button>
+                        </form>
+                    </div>
+                    <a href="./second-dl-jstd.html"><botton>登录跳转</botton></a>
+                </section>
+                <section id="register" class="card mt-5">
+                    <h2 class="card-header">注册竞赛团队</h2>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="teamname">团队名：</label>
+                                <input type="text" id="teamname" name="teamname" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">邮箱：</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">密码：</label>
+                                <input type="password" id="password" name="password" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">注册</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-8">
+                <section  class="card" id="外部沟通">
+                    <h2 class="card-header">团队与外部的沟通渠道</h2>
+                    <div class="card-body">
+                        <h4>团队频道：#team-channel</h4>
+                        <p>在这里可以与团队成员进行沟通。</p>
+                        <textarea class="form-control"></textarea>
+                        <button type="submit" class="btn btn-primary mt-3">发送</button>
+                        <hr>
+                        <h4>功能分类</h4>
+                        <ul>
+                            <li><a href="#interview">新加入队员的面试</a></li>
+                            <li><a href="#teacher">团队与指导老师端</a></li>
+                            <li><a href="#enterprise">团队与企业端</a></li>
+                            <li><a href="#other">其他外部端的沟通</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section  class="card" id="团队积分量化">
+                    <h2 class="card-header">团队积分量化</h2>
+                    <div class="card-body">
+                        <p>当前积分：<span id="current-score">1000</span></p>
+                        <p>上次比赛得分：<span id="last-score">200</span></p>
+                        <p>历史最高分：<span id="highest-score">1200</span></p>
+                        <button type="submit" class="btn btn-primary mt-3" onclick="showScoreList()">查看团队积分榜单</button>
+                        <hr>
+                        <h4>制作团队积分榜单</h4>
+                        <p>请填写参赛成员的积分和工种贡献率占比：</p>
+                        <div id="score-form">
+                            <div class="form-group">
+                                <label for="member1">成员1</label>
+                                <input type="text" id="member1" name="member1" class="form-control" placeholder="姓名">
+                                <input type="number" id="score1" name="score1" class="form-control mt-3"
+                                    placeholder="积分">
+                                <input type="number" id="ratio1" name="ratio1" class="form-control mt-3"
+                                    placeholder="贡献率占比">
+                            </div>
+                            <div class="form-group">
+                                <label for="member2">成员2</label>
+                                <input type="text" id="member2" name="member2" class="form-control" placeholder="姓名">
+                                <input type="number" id="score2" name="score2" class="form-control mt-3"
+                                    placeholder="积分">
+                                <input type="number" id="ratio2" name="ratio2" class="form-control mt-3"
+                                    placeholder="贡献率占比">
+                            </div>
+                            <div class="form-group">
+                                <label for="member3">成员3</label>
+                                <input type="text" id="member3" name="member3" class="form-control" placeholder="姓名">
+                                <input type="number" id="score3" name="score3" class="form-control mt-3"
+                                    placeholder="积分">
+                                <input type="number" id="ratio3" name="ratio3" class="form-control mt-3"
+                                    placeholder="贡献率占比">
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3"
+                                onclick="calculateScore()">计算团队积分</button>
+                        </div>
+                        <div id="score-result" style="display: none;">
+                            <p>团队积分： <span id="result-score"></span></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 当面科技. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-

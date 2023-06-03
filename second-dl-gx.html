@@ -6,10 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="Chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>当面高校账号登录</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./dmcss.css" />
-    <style>
-        
-    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("form").submit(function (event) {
+                event.preventDefault();
+                var schoolname = $("#schoolname").val();
+                var password = $("#password").val();
+                if (schoolname == "" || password == "") {
+                    alert("请输入学校名称和密码！");
+                } else {
+                    // 表单提交
+                    alert("表单已提交！");
+                }
+            });
+        });
+    </script>
+
+<style>
+    body {
+        font-family: "Microsoft YaHei", sans-serif;
+        font-size: 16px;
+        color: #666;
+        background: url(./dlzcbackground.png) no-repeat fixed center center / cover;
+    }
+    
+    .dlzc-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    
+    .dlzc-container h1 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    form label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    input[type="submit"] {
+        display: block;
+        margin: 0 auto;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 20px;
+        border: none;
+    }
+    
+    .link {
+        font-size: 16px;
+        color: #007bff;
+        text-decoration: none;
+    }
+</style>
 </head>
 
 <body class="dlzcbody" background="./dlzcbackground.png"
@@ -34,3 +102,4 @@ background-size: 100% 100%;">
 </body>
 
 </html>
+

@@ -1,130 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>企业界面</title>
-</head>
+    <title>当面--企业</title>
 
+    <!-- 引入 Bootstrap 样式文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- 引入 Bootstrap JavaScript文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- 自定义样式 -->
+    <style>
+        /* 修改导航栏链接颜色 */
+        nav a {
+            color: #333;
+        }
+
+        /* 添加页脚样式 */
+        footer {
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
 <body>
     <header>
-        <h1>企业页面</h1>
+        <h1>当面--企业</h1>
+        <h4>Data 、Security +，为用户提供个性化服务</h4>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#request">企业需求描述</a></li>
-            <li><a href="#find-project">寻找项目</a></li>
-            <li><a href="#find-talent">寻找人才</a></li>
-            <li><a href="#find-partner">寻找合作</a></li>
-            <li><a href="#company-track">参与企业赛道</a></li>
-            <li><a href="#scoreboard">积分榜单和付费沟通渠道</a></li>
-            <li><a href="#paid-service">背景调查辅助服务</a></li>
-        </ul>
-    </nav>
-    <div id="request">
-        <h2>企业需求描述</h2>
-        <p>在这里，您可以发布您的企业需求，包括招聘、采购、合作等。</p>
-        <form>
-            <label for="title">标题：</label>
-            <input type="text" id="title" name="title" required>
-            <label for="description">描述：</label>
-            <textarea id="description" name="description" required></textarea>
-            <button type="submit">发布</button>
-        </form>
-    </div>
-    <div id="find-project">
-        <h2>寻找项目</h2>
-        <p>在这里，您可以浏览和搜索其他企业发布的项目。</p>
-        <form>
-            <label for="search">搜索：</label>
-            <input type="text" id="search" name="search">
-            <button type="submit">搜索</button>
-        </form>
-        <ul>
-            <li><a href="#">项目1</a></li>
-            <li><a href="#">项目2</a></li>
-            <li><a href="#">项目3</a></li>
-        </ul>
-    </div>
-    <div id="find-talent">
-        <h2>寻找人才</h2>
-        <p>在这里，您可以浏览和搜索其他企业发布的招聘信息。</p>
-        <form>
-            <label for="search">搜索：</label>
-            <input type="text" id="search" name="search">
-            <button type="submit">搜索</button>
-        </form>
-        <ul>
-            <li><a href="#">职位1</a></li>
-            <li><a href="#">职位2</a></li>
-            <li><a href="#">职位3</a></li>
-        </ul>
-    </div>
-    <div id="find-partner">
-        <h2>寻找合作</h2>
-        <p>在这里，您可以浏览和搜索其他企业发布的合作信息。</p>
-        <form>
-            <label for="search">搜索：</label>
-            <input type="text" id="search" name="search">
-            <button type="submit">搜索</button>
-        </form>
-        <ul>
-            <li><a href="#">合作伙伴1</a></li>
-            <li><a href="#">合作伙伴2</a></li>
-            <li><a href="#">合作伙伴3</a></li>
-        </ul>
-    </div>
-    <div id="company-track">
-        <h2>参与企业赛道</h2>
-        <p>在这里，您可以浏览和参与其他企业发布的赛道。</p>
-        <ul>
-            <li><a href="#">赛道1</a></li>
-            <li><a href="#">赛道2</a></li>
-            <li><a href="#">赛道3</a></li>
-        </ul>
-    </div>
-    <div id="scoreboard">
-        <h2>积分榜单</h2>
-        <p>在这里，您可以查看企业积分榜单。</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>排名</th>
-                    <th>企业名称</th>
-                    <th>积分</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>企业1</td>
-                    <td>1000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>企业2</td>
-                    <td>800</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>企业3</td>
-                    <td>600</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div id="paid-service">
-        <h2>背景调查辅助服务</h2>
-        <p>在这里，您可以购买我们的付费服务，包括沟通渠道和背景调查辅助。</p>
-        <ul>
-            <li><a href="#">沟通渠道服务</a></li>
-            <li><a href="#">背景调查辅助服务</a></li>
-        </ul>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">当面企业界面，功能选择：</a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <br>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#request">企业需求描述</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#find-project">寻找项目</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#find-talent">寻找人才</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#find-partner">寻找合作</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#company-track">参与企业赛道</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#scoreboard">积分榜单和付费沟通渠道</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#paid-service">背景调查辅助服务</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <!-- 注册 -->
+<div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="company-email" class="form-label">企业邮箱地址</label>
+        <input type="email" class="form-control" id="company-email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">密码</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirm-password" class="form-label">确认密码</label>
+        <input type="password" class="form-control" id="confirm-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">注册</button>
+    </form>
+  </div>
+  
+  <!-- 登录 -->
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="company-email" class="form-label">企业邮箱地址</label>
+        <input type="email" class="form-control" id="company-email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">密码</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">登录</button>
+    </form>
+  </div>
+  
+  <!-- 注销 -->
+  <button class="btn btn-danger">注销</button>
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="current-password" class="form-label">当前密码</label>
+        <input type="password" class="form-control" id="current-password" required>
+      </div>
+      <div class="mb-3">
+        <label for="new-password" class="form-label">新密码</label>
+        <input type="password" class="form-control" id="new-password" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirm-new-password" class="form-label">确认新密码</label>
+        <input type="password" class="form-control" id="confirm-new-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">修改密码</button>
+    </form>
+  </div>
+  
+  <!-- 找回密码 -->
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="company-email" class="form-label">企业邮箱地址</label>
+        <input type="email" class="form-control" id="company-email" required>
+      </div>
+      <button type="submit" class="btn btn-primary">找回密码</button>
+    </form>
+  </div>
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="company-logo" class="form-label">新 Logo 上传</label>
+        <input type="file" class="form-control" id="company-logo" accept=".jpg,.jpeg,.png">
+      </div>
+      <button type="submit" class="btn btn-primary">更改 Logo</button>
+    </form>
+  </div>
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="company-introduction" class="form-label">公司简介</label>
+        <textarea class="form-control" id="company-introduction" rows="5" required></textarea>
+      </div>
+      <hr>
+      <h3>联系方式</h3>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="contact-name-1" class="form-label">联系人姓名</label>
+          <input type="text" class="form-control" id="contact-name-1" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="contact-email-1" class="form-label">联系人邮箱地址</label>
+          <input type="email" class="form-control" id="contact-email-1" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="contact-phone-1" class="form-label">联系人电话号码</label>
+          <input type="tel" class="form-control" id="contact-phone-1" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="contact-name-2" class="form-label">联系人姓名</label>
+          <input type="text" class="form-control" id="contact-name-2" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="contact-email-2" class="form-label">联系人邮箱地址</label>
+          <input type="email" class="form-control" id="contact-email-2" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="contact-phone-2" class="form-label">联系人电话号码</label>
+          <input type="tel" class="form-control" id="contact-phone-2" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">保存</button>
+    </form>
+  </div>
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="title" class="form-label">标题</label>
+        <input type="text" class="form-control" id="title" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">描述</label>
+        <textarea class="form-control" id="description" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">发布</button>
+    </form>
+  </div>
+  <!-- 寻找项目 -->
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="project-search" class="form-label">搜索</label>
+        <input type="text" class="form-control" id="project-search">
+      </div>
+      <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+    <hr>
+    <h3>项目列表</h3>
+    <ul>
+      <li><a href="#">项目1</a></li>
+      <li><a href="#">项目2</a></li>
+      <li><a href="#">项目3</a></li>
+    </ul>
+  </div>
+  
+  <!-- 寻找人才 -->
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="talent-search" class="form-label">搜索</label>
+        <input type="text" class="form-control" id="talent-search">
+      </div>
+      <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+    <hr>
+    <h3>职位列表</h3>
+    <ul>
+      <li><a href="#">职位1</a></li>
+      <li><a href="#">职位2</a></li>
+      <li><a href="#">职位3</a></li>
+    </ul>
+  </div>
+  
+  <!-- 寻找合作 -->
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="partner-search" class="form-label">搜索</label>
+        <input type="text" class="form-control" id="talent-search">
+      </div>
+      <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+    <hr>
+    <h3>职位列表</h3>
+    <ul>
+      <li><a href="#">职位1</a></li>
+      <li><a href="#">职位2</a></li>
+      <li><a href="#">职位3</a></li>
+    </ul>
+  </div>
     <footer>
         <p>&copy; 2023 当面科技. All rights reserved.</p>
     </footer>

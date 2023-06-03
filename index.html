@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>当面官网</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
 </head>
-
 <body>
+    <!-- header 标签 -->
     <header>
         <h1>当面--竞赛</h1>
-        <h3>Data 、Security +，为用户提供个性化服务</h3>
+        <h3>Data、Security+，为用户提供个性化服务</h3>
         <p>欢迎来到当面--竞赛，在这里你可以关注到常见大学生竞赛最新消息，了解知名企业需求</p>
         <nav>
             <ul>
                 <li><a href="./index.html">首页</a></li>
-                <li><a href="#竞赛列表">竞赛列表</a></li>
-                <li><a href="#著名公司">著名公司</a></li>
-                <li><a href="#高校">高校</a></li>
+                <li><a href="#competition-list-section">竞赛列表</a></li>
+                <li><a href="#famous-companies">著名公司</a></li>
+                <li><a href="#universities">高校</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- main 标签 -->
     <main>
-        <section id="竞赛列表">
+        <section id="competition-list-section">
             <h2>最新竞赛信息，点击进入官网</h2>
-            <ul>
-                <li><a href="http://www.socchina.net">全国大学生嵌入式芯片与系统设计竞赛章程</a></li>
-                <li><a href="http://www.culsc.cn">全国大学生生命科学竞赛(CULSC)</a></li>
-                <li><a href="http://wlsycx.moocollege.com">全国大学生物理实验竞赛</a></li>
-                <li><a href="https://cy.ncss.org.cn/">中国“互联网+"大学生创新创业大赛</a></li>
-                <li><a href="https://tiaozhanbei.net/">“挑战杯”全国大学生课外学术科技作品竞赛</a></li>
-                <li><a href="https://chuangqingchun.net/">“挑战杯“中国大学生创业计划大赛</a></li>
-                <li><a href="https://acm.cumt.edu.cn">ACM-ICPC国际大学生程序设计竞赛</a></li>
-                <li><a href="https://mcm.edu.cn/">全国大学生数学建模竞赛</a></li>
-                <li><a href="https://nuedchina.com">全国大学生电子设计竞赛</a></li>
-            </ul>
-            <button>查看更多</button>
+            <ul id="competition-list"></ul>
+            <button id="show-more-btn">查看更多</button>
         </section>
-        <section id="著名公司">
+
+        <section id="famous-companies">
             <h2>著名公司</h2>
             <ul>
                 <li><a href="#">华为技术有限公司</a></li>
@@ -46,7 +42,8 @@
                 <li><a href="#">腾讯科技有限公司</a></li>
             </ul>
         </section>
-        <section id="高校">
+
+        <section id="universities">
             <h2>高校</h2>
             <ul>
                 <li><a href="#">清华大学</a></li>
@@ -54,37 +51,97 @@
                 <li><a href="#">复旦大学</a></li>
             </ul>
         </section>
+
+        <!-- 网站注册登录之后六方用户不同的界面 -->
+        <section id="user-roles">
+            <h2>选择身份</h2>
+            <ul>
+                <li><a href="./third-jsf.html">竞赛方</a></li>
+                <li><a href="./third-jss.html">竞赛生</a></li>
+                <li><a href="./third-jstd.html">竞赛团队</a></li>
+                <li><a href="./third-qy.html">企业</a></li>
+                <li><a href="./third-gx.html">高校</a></li>
+                <li><a href="./third-teacher.html">指导老师</a></li>
+            </ul>
+        </section>
+
+        <!-- 网站登录后不同角色用户的界面 -->
+        <section id="login-as">
+            <h2>请选择您要登录的角色</h2>
+            <ul>
+                <li><a href="./second-dl-jsf.html">竞赛方</a></li>
+                <li><a href="./second-dl-jss.html">竞赛生</a></li>
+                <li><a href="./second-dl-jstd.html">竞赛团队</a></li>
+                <li><a href="./second-dl-qy.html">企业</a></li>
+                <li><a href="./second-dl-gx.html">高校</a></li>
+                <li><a href="./second-dl-teacher.html">指导老师</a></li>
+            </ul>
+        </section>
+
+        <!-- 网站注册不同角色用户的界面 -->
+        <section id="register-as">
+            <h2>请选择您要注册的角色</h2>
+            <ul>
+                <li><a href="./second-zc-jsf.html">竞赛方</a></li>
+                <li><a href="./second-zc-jss.html">竞赛生</a></li>
+                <li><a href="./second-zc-jstd.html">竞赛团队</a></li>
+                <li><a href="./second-zc-qy.html">企业</a></li>
+                <li><a href="./second-zc-gx.html">高校</a></li>
+                <li><a href="./second-zc-teacher.html">指导老师</a></li>
+            </ul>
+        </section>
     </main>
-    <p>下面是网站（需要后端和数据库连接）的注册登录之后六方用户不同的界面</p>
-    <ul>
-        <li><a href="./secondpage.html">选择身份</a></li>
-        <li><a href="./third-jsf.html">竞赛方</a></li>
-        <li><a href="./third-jss.html">竞赛生</a></li>
-        <li><a href="./third-jstd.html">竞赛团队</a></li>
-        <li><a href="./third-qy.html">企业</a></li>
-        <li><a href="./third-gx.html">高校</a></li>
-        <li><a href="./third-teacher.html">指导老师</a></li>
-    </ul>
-    <p>下面是网站注册登录之后六方用户不同的界面</p>
-    <ul>登录
-        <li><a href="./second-dl-jsf.html">竞赛方</a></li>
-        <li><a href="./second-dl-jsf.html">竞赛生</a></li>
-        <li><a href="./second-dl-jstd.html">竞赛团队</a></li>
-        <li><a href="./second-dl-qy.html">企业</a></li>
-        <li><a href="./second-dl-gx.html">高校</a></li>
-        <li><a href="./second-dl-teacher.html">指导老师</a></li>
-    </ul>
-    <ul>注册
-        <li><a href="./second-zc-jsf.html">竞赛方</a></li>
-        <li><a href="./second-zc-jsf.html">竞赛生</a></li>
-        <li><a href="./second-zc-jstd.html">竞赛团队</a></li>
-        <li><a href="./second-zc-qy.html">企业</a></li>
-        <li><a href="./second-zc-gx.html">高校</a></li>
-        <li><a href="./second-zc-teacher.html">指导老师</a></li>
-    </ul>
+
+    <!-- footer 标签 -->
     <footer>
         <p>&copy; 2023 当面科技. All rights reserved.</p>
     </footer>
-</body>
 
+    <!-- JavaScript 代码 -->
+    <script>
+        const xhr = new XMLHttpRequest();
+        const listEl = document.getElementById('competition-list');
+        const btnEl = document.getElementById('show-more-btn');
+        const limit = 6;
+        let offset = 0;
+
+        function loadCompetitions() {
+            xhr.open('GET', 'competitions.json');
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const competitions = JSON.parse(xhr.response);
+
+                    for (let i = offset; i < offset + limit && i < competitions.length; i++) {
+                        const liEl = document.createElement('li');
+                        const aEl = document.createElement('a');
+                        aEl.innerText = competitions[i].name;
+                        aEl.href = competitions[i].url;
+                        liEl.appendChild(aEl);
+                        listEl.appendChild(liEl);
+                    }
+
+                    if (offset + limit >= competitions.length) {
+                        btnEl.style.display = 'none';
+                    } else {
+                        btnEl.style.display = 'block';
+                    }
+
+                } else {
+                    console.error(xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.error(xhr.statusText);
+            };
+            xhr.send();
+        }
+
+        loadCompetitions();
+
+        btnEl.addEventListener('click', function () {
+            offset += limit;
+            loadCompetitions();
+        });
+    </script>
+</body>
 </html>

@@ -2,50 +2,138 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>指导老师界面</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>指导老师界面</title>
+
+  <!-- 引入 Bootstrap 样式文件 -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.6.0/css/bootstrap.min.css">
+  <!-- 引入 Bootstrap JavaScript 文件 -->
+  <script src="https://cdn.bootcss.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="example.js"></script>
+
 </head>
 
 <body>
-    <header>
-        <h1>指导老师页面</h1>
-    </header>
+  <header>
+    <h1>指导老师页面</h1>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="#状态描述">状态描述</a></li>
-            <li><a href="#沟通渠道">沟通渠道</a></li>
-            <li><a href="#信息管理">信息管理</a></li>
-        </ul>
-    </nav>
-    <section class="card" id="状态描述">
-        <h2>状态描述</h2>
-        <ul>
-            <li>能够担任竞赛团队指导老师</li>
-            <li>暂时不能够担任竞赛团队指导老师（预计维持期限，自定义）</li>
-            <li>不能够担任竞赛团队指导老师（无法预计维持期限）</li>
-        </ul>
-    </section>
-    <section class="card" id="沟通渠道">
-        <h2>沟通渠道</h2>
-        <ul>
-            <li><a href="#" class="sevr">竞赛团队沟通渠道</a></li>
-            <li><a href="#" class="sevr">竞赛个人沟通渠道</a></li>
-        </ul>
-    </section>
-    <section class="card" id="信息管理">
-        <h2>信息管理</h2>
-        <ul>
-            <li><a href="#" class="sevr">指导团队获得的证书管理</a></li>
-        </ul>
-    </section>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">指导老师页面</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#状态描述">状态描述</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#沟通渠道">沟通渠道</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#信息管理">信息管理</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#个人账户">个人账户</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <footer>
-        <p>&copy; 2023 当面科技. All rights reserved.</p>
-    </footer>
+  <section class="card" id="状态描述">
+    <h2>状态描述</h2>
+    <button class="btn dropdown-toggle" type="button" id="statusDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        选择状态
+      </button>
+      <div class="dropdown-menu" aria-labelledby="statusDropdown">
+        <a class="dropdown-item" href="#">能够担任竞赛团队指导老师</a>
+        <a class="dropdown-item" href="#">暂时不能够担任竞赛团队指导老师（预计维持期限，自定义）</a>
+        <a class="dropdown-item" href="#">不能够担任竞赛团队指导老师（无法预计维持期限）</a>
+      </div>
+  </section>
+  <section class="card" id="沟通渠道">
+    <h2>沟通渠道</h2>
+    <ul>
+      <li><a href="#" class="sevr">竞赛团队沟通渠道</a></li>
+      <li><a href="#" class="sevr">竞赛个人沟通渠道</a></li>
+    </ul>
+  </section>
+  <section class="card" id="信息管理">
+    <h2>信息管理</h2>
+    <ul>
+      <li><a href="#" class="sevr">指导团队获得的证书管理</a></li>
+    </ul>
+  </section>
+  
+  <!-- 个人账户 -->
+  <section class="card" id="个人账户">
+    <h2>个人账户</h2>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">邮箱地址</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">密码</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" required>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">记住我</label>
+      </div>
+      <button type="submit" class="btn btn-primary">登录</button>
+      <a href="#" class="btn btn-secondary">注册</a>
+      <a href="#" class="btn btn-secondary">注销账号</a>
+    </form>
+    <br>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlFile1">更改头像</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <div class="form-group">
+        <label for="nameInput">名字</label>
+        <input type="text" class="form-control" id="nameInput">
+      </div>
+      <div class="form-group">
+        <label for="genderSelect">性别</label>
+        <select class="form-control" id="genderSelect">
+          <option>男</option>
+          <option>女</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ageInput">年龄</label>
+        <input type="text" class="form-control" id="ageInput">
+      </div>
+      <div class="form-group">
+        <label for="researchInput">研究方向</label>
+        <input type="text" class="form-control" id="researchInput">
+      </div>
+      <div class="form-group">
+        <label for="achievementTextarea">研究成果</label>
+        <textarea class="form-control" id="achievementTextarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="careerTextarea">生涯成就</label>
+        <textarea class="form-control" id="careerTextarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="contactInput">联系方式</label>
+        <input type="text" class="form-control" id="contactInput">
+      </div>
+      <button type="submit" class="btn btn-primary">提交</button>
+      <button type="reset" class="btn btn-secondary">重置</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 当面科技. All rights reserved.</p>
+  </footer>
 </body>
 
 </html>
