@@ -5,10 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>当面官网</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* 页面布局 */
+        .container {
+            display: flex;
+        }
+
+        .left {
+            flex: 1;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .right {
+            width: 25%;
+            margin-left: 20px;
+            padding: 20px;
+            background-color: #e9e9e9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* 链接样式 */
+        a {
+            display: block;
+            font-weight: bold;
+            color: blue;
+            text-decoration: none;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
     <!-- header 标签 -->
@@ -28,6 +60,8 @@
 
     <!-- main 标签 -->
     <main>
+        <div class="container" >
+            <div class="left">
         <section id="competition-list-section">
             <h2>最新竞赛信息，点击进入官网</h2>
             <ul id="competition-list"></ul>
@@ -90,6 +124,17 @@
                 <li><a href="./second-zc-teacher.html">指导老师</a></li>
             </ul>
         </section>
+        </div>
+        <div class="right">
+            <h3>最新竞赛消息：</h3>
+            <a href="https://www.pku.edu.cn/news/22017.htm">北京大学获ACM国际大学生程序设计竞赛世界总决赛金牌/a>
+            <a href="https://news.tsinghua.edu.cn/info/1097/97986.htm">清华大学荣膺第四届“互联网+”大学生创新创业大赛全国总决赛金奖</a>
+            <a href="#">南京邮电大学主办的“氧化云杯”高校物联网应用大赛正式启动</a>
+            <a href="https://www.aliyun.com/zixun/aggregation/24991">阿里云云计算大赛正式启动，提供超过300万元现金总奖励</a>
+            <a href="">吉利杯世界智能驾驶大赛即将开战，吸引了全球200多支团队参赛</a>
+            <botton id="show-more-btn">查看更多</botton>
+        </div>
+    </div>
     </main>
 
     <!-- footer 标签 -->
