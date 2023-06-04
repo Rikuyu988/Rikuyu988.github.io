@@ -40,7 +40,7 @@
                         <a class="nav-link" href="#contact">联系方式</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#status">状态描述</a>
+                        <a class="nav-link" href="#status-description">状态描述</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#channel">沟通渠道</a>
@@ -58,60 +58,138 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container mt-5">
             <div class="row">
-                <div class="col-md-6" id="skills">
-                    <h2>个人技能展示</h2>
-                    <p>在这里你可以展示你的技能，让更多人了解你的能力。</p>
-                    <img src="skill.png" alt="Skill Showcase">
-                    <button type="button">添加技能</button>
+                <div class="col-md-6 mb-3">
+                    <div class="card border-0 rounded shadow-sm p-3" id="skills">
+                        <h2 class="card-title mb-3">个人技能展示</h2>
+                        <p class="card-text">以下是我擅长的技能，让你更好地了解我的能力。</p>
+                        <ul>
+                            <li>精通 C++ 编程语言，熟练掌握 STL 和 Boost 库；</li>
+                            <li>熟悉 Python、Java、JavaScript 等编程语言；</li>
+                            <li>熟练使用 Git 版本控制工具，了解 SVN 和 Mercurial ；</li>
+                            <li>熟悉 Linux 系统开发和运维，熟练使用 Vim 和 Emacs 编辑器；</li>
+                            <li>熟悉 TCP/IP 协议栈和 Socket 编程，了解 HTTP/HTTPS 协议；</li>
+                            <li>了解计算机体系结构和操作系统原理，熟悉常见数据结构和算法。</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary mt-3" onclick="addSkill()">添加技能</button>
+                    </div>
                 </div>
-                <div class="col-md-6" id="history">
-                    <h2>过往比赛经历</h2>
-                    <p>在这里分享您参加过的比赛经历或提交参赛佐证资料，让更多人了解您的成长历程。</p>
-                    <img src="history.png" alt="Competition History">
-                    <button type="button">查看更多经历</button>
-                    <button type="button">添加比赛</button>
-                    <button type="button">提交参赛佐证资料</button>
+                <div class="col-md-6 mb-3">
+                    <div class="card border-0 rounded shadow-sm p-3" id="history">
+                        <h2 class="card-title mb-3">过往比赛经历</h2>
+                        <p class="card-text">以下是我参加过的比赛经历，让你更好地了解我的成长历程。同时，我还提交了相应的参赛佐证资料。</p>
+                        <ul>
+                            <li>2019 年全国大学生程序设计竞赛省赛二等奖；</li>
+                            <li>2020 年 ACM/ICPC 亚洲区预选赛金牌；</li>
+                            <li>2021 年 Google Code-in 比赛贡献者之一，为开源社区贡献了多个项目。</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary mt-3"
+                            onclick="viewMoreExperience()">查看更多经历</button>
+                        <button type="button" class="btn btn-primary mt-3" onclick="addCompetition()">添加比赛</button>
+                        <button type="button" class="btn btn-primary mt-3" onclick="submitProof()">提交参赛佐证资料</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6" id="contact">
                     <h2>联系方式</h2>
                     <p>在这里添加或者修改您的联系方式。</p>
                     <img src="contact.png" alt="Contact information">
-                    <button type="button">添加/修改</button>
+                    <button type="button" class="btn btn-primary mt-3">添加/修改</button>
                 </div>
                 <div class="col-md-6" id="status">
                     <h2>状态描述</h2>
-                    <p>比赛类：未参赛/已参赛（正在参赛的个数，自定义）/暂时不想参赛 组队类：求组队/已有队伍/与队伍接洽中</p>
-                    <img src="status.png" alt="Status discription">
-                    <button type="button">修改</button>
+                    <div id="status-description">
+                        <br>
+
+                        <p>选择比赛类状态或组队类状态后，该处将展示您当前的状态。</p>
+                        <p id="status-text">您当前的状态为：未选择</p>
+                    </div>
+                    <!-- 按钮组 -->
+                    <div class="btn-group">
+                        <!-- 清除按钮 -->
+                        <button type="button" class="btn btn-outline-primary" onclick="clearStatus()">清除</button>
+                        <!-- 重新选择状态按钮 -->
+                        <!-- <button type="button" class="btn btn-primary" onclick="resetStatus()">重新选择状态</button> -->
+                    </div>
+                    <div id="contest-status">
+                        <h5>比赛类状态</h5>
+                        <!-- 比赛类状态选择按钮 -->
+                        <div class="dropdown">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                id="contest-status-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                未参赛
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="contest-status-dropdown">
+                                <a class="dropdown-item" href="#" onclick="setContestStatus('未参赛')">未参赛</a>
+                                <a class="dropdown-item" href="#" onclick="setContestStatus('自定义参赛数量')">参赛中，自定义参赛数量</a>
+                                <a class="dropdown-item" href="#" onclick="setContestStatus('暂时不想参赛')">暂时不想参赛</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div id="team-status">
+                        <h5>组队类状态</h5>
+                        <!-- 组队类状态选择按钮 -->
+                        <div class="dropdown">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                id="team-status-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                未组队
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="team-status-dropdown">
+                                <a class="dropdown-item" href="#" onclick="setTeamStatus('已组队')">已组队</a>
+                                <a class="dropdown-item" href="#" onclick="setTeamStatus('求组队')">求组队</a>
+                                <a class="dropdown-item" href="#" onclick="setTeamStatus('与队伍接洽中')">与队伍接洽中</a>
+                                <a class="dropdown-item" href="#" onclick="setTeamStatus('暂不考虑组队')">暂不考虑组队</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container">
+            <hr>
+
+
+        </div>
+        <div class="container mt-5">
             <div class="row">
-                <div class="col-md-6" id="channel">
-                    <h2>沟通渠道</h2>
-                    <p>开通后，可查看对方的账号信息。</p>
-                    <img src="channel.png" alt="Communication channels">
-                    <button type="button">开通</button>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-0 rounded shadow-sm" id="channel">
+                        <img src="channel.png" alt="Communication channels" class="card-img-top">
+                        <div class="card-body">
+                            <h2 class="card-title mb-3">沟通渠道</h2>
+                            <p class="card-text">开通后，可查看对方的账号信息。</p>
+                            <button type="button" class="btn btn-primary btn-block">立即开通</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6" id="points">
-                    <h2>个人积分量化</h2>
-                    <p>在这里查看竞赛积分。根据比赛经历量化，根据量化后的分数进行排序</p>
-                    <img src="history.png" alt="Competition History">
-                    <button type="button">查看具体排行</button>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-0 rounded shadow-sm">
+                        <img src="history.png" alt="Competition History" class="card-img-top">
+                        <div class="card-body" id="points">
+                            <h2 class="card-title mb-3">个人积分量化</h2>
+                            <p class="card-text">在这里查看竞赛积分。根据比赛经历量化，根据量化后的分数进行排序。</p>
+                            <button type="button" class="btn btn-primary btn-block">查看排行榜</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6" id="forum.html">
-                    <h2>学生论坛</h2>
-                    <p>在这里你可以与其他竞赛学生交流和讨论，分享经验和知识。</p>
-                    <a href="forum.html" target="_blank"><button type="button" class="btn btn-success">进入论坛</button></a>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-0 rounded shadow-sm">
+                        <img src="forum.png" alt="Student Forum" class="card-img-top">
+                        <div class="card-body">
+                            <h2 class="card-title mb-3">学生论坛</h2>
+                            <p class="card-text">在这里你可以与其他竞赛学生交流和讨论，分享经验和知识。</p>
+                            <a href="forum.html" target="_blank" class="btn btn-success btn-block">进入论坛</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -192,5 +270,99 @@
     </footer>
 </body>
 <script src="example.js"></script>
+<script>
+    // 添加技能函数
+    function addSkill() {
+        var skill = prompt("请输入您想添加的技能：");
+        if (skill !== null && skill !== "") {
+            var skillList = document.querySelector("#skills ul");
+            var newSkill = document.createElement("li");
+            newSkill.appendChild(document.createTextNode(skill));
+            skillList.appendChild(newSkill);
+        }
+    }
+
+    // 查看更多经历函数
+    function viewMoreExperience() {
+        alert("当前没有更多的比赛经历可供查看。");
+    }
+
+    // 添加比赛函数
+    function addCompetition() {
+        var competition = prompt("请输入您想添加的比赛经历：");
+        if (competition !== null && competition !== "") {
+            var competitionList = document.querySelector("#history ul");
+            var newCompetition = document.createElement("li");
+            newCompetition.appendChild(document.createTextNode(competition));
+            competitionList.appendChild(newCompetition);
+        }
+    }
+
+    // 提交参赛佐证资料函数
+    function submitProof() {
+        var proof = prompt("请上传您的参赛佐证资料：");
+        if (proof !== null && proof !== "") {
+            alert("感谢您的提交！");
+        }
+    }
+</script>
+<script>
+    // 更新比赛类状态
+    /*function setContestStatus(status) {
+        document.getElementById("contest-status-dropdown").innerText = status;
+        updateStatusText();
+    }*/
+
+    // 更新组队类状态
+    function setTeamStatus(status) {
+        document.getElementById("team-status-dropdown").innerText = status;
+        updateStatusText();
+    }
+
+    // 更新状态描述文本
+    function updateStatusText() {
+        var contestStatus = document.getElementById("contest-status-dropdown").innerText;
+        var teamStatus = document.getElementById("team-status-dropdown").innerText;
+        var statusText = "您当前的状态为：";
+
+        if (contestStatus !== "未参赛") {
+            statusText += contestStatus;
+        }
+
+        if (teamStatus !== "未组队") {
+            if (statusText !== "您当前的状态为：") {
+                statusText += "，";
+            }
+            statusText += teamStatus;
+        }
+
+        if (statusText === "您当前的状态为：") {
+            statusText += "未选择";
+        }
+
+        document.getElementById("status-text").innerText = statusText;
+    }
+    function setContestStatus(status) {
+        if (status === '自定义参赛数量') {
+            // 弹出对话框要求用户输入参赛数量，并将其赋值给statusText变量
+            var statusText = prompt("请输入参赛数量：", "");
+            if (statusText !== null) { // 用户点击了OK按钮
+                // 更新状态文本和状态描述模块中的内容
+                document.getElementById("status-text").innerHTML = "您当前的状态为：参赛中（" + statusText + "个）";
+                document.getElementById("contest-status-dropdown").innerHTML = "参赛中（" + statusText + "个）";
+            }
+        } else {
+            // 更新状态文本和状态描述模块中的内容
+            document.getElementById("status-text").innerHTML = "您当前的状态为：" + status;
+            document.getElementById("contest-status-dropdown").innerHTML = status;
+        }
+    }
+    function clearStatus() {
+        // 将状态文本和比赛类/组队类状态的下拉菜单恢复为默认值
+        document.getElementById("status-text").innerHTML = "您当前的状态为：未选择";
+        document.getElementById("contest-status-dropdown").innerHTML = "未参赛";
+        document.getElementById("team-status-dropdown").innerHTML = "未组队";
+    }
+</script>
 
 </html>

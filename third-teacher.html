@@ -2,138 +2,218 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>指导老师界面</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当面--指导老师</title>
 
-  <!-- 引入 Bootstrap 样式文件 -->
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.6.0/css/bootstrap.min.css">
-  <!-- 引入 Bootstrap JavaScript 文件 -->
-  <script src="https://cdn.bootcss.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="example.js"></script>
-
+    <!-- 引入 Bootstrap 样式文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.6.0/css/bootstrap.min.css">
+    <!-- 引入 Bootstrap 的 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <header>
-    <h1>指导老师页面</h1>
-  </header>
+    <header>
+        <h1>指导老师页面</h1>
+        <h4>Data 、Security +，为用户提供个性化服务</h4>
+    </header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">指导老师页面</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#状态描述">状态描述</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#沟通渠道">沟通渠道</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#信息管理">信息管理</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#个人账户">个人账户</a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">指导老师页面</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#状态描述">状态描述</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#沟通渠道">沟通渠道</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#信息管理">信息管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#个人账户">个人账户</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="card">
+        <h2>状态描述</h2>
+        <div id="状态描述">
+            <h6>选择状态</h6>
+        </div>
+
+        <!-- "重新选择状态" 按钮 -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                重新选择状态
+            </button>
+            <div class="dropdown-menu">
+                <!-- 菜单选项 -->
+                <a class="dropdown-item" href="#" onclick="setStatus('能够担任竞赛团队指导老师')">能够担任竞赛团队指导老师</a>
+                <a class="dropdown-item" href="#"
+                    onclick="setStatus('暂时不能够担任竞赛团队指导老师（预计维持期限，自定义）')">暂时不能够担任竞赛团队指导老师（预计维持期限，自定义）</a>
+                <a class="dropdown-item" href="#"
+                    onclick="setStatus('不能够担任竞赛团队指导老师（无法预计维持期限）')">不能够担任竞赛团队指导老师（无法预计维持期限）</a>
+                <a class="dropdown-item" href="#" onclick="setStatus('有空闲时间可以接受新的指导任务')">有空闲时间可以接受新的指导任务</a>
+                <a class="dropdown-item" href="#"
+                    onclick="setStatus('正在进行竞赛相关的科研项目，暂时不能担任竞赛指导任务')">正在进行竞赛相关的科研项目，暂时不能担任竞赛指导任务</a>
+                <a class="dropdown-item" href="#" onclick="setStatus('在进行其他竞赛指导任务，无法接受新的任务')">在进行其他竞赛指导任务，无法接受新的任务</a>
+                <div class="dropdown-divider"></div>
+                <!-- 重新选择状态按钮 -->
+                <button class="dropdown-item" type="button" onclick="clearStatus()">未选择</button>
+            </div>
+        </div>
+        <!-- 按钮组 -->
+        <div class="btn-group">
+            <!-- 清除按钮 -->
+            <button type="button" class="btn btn-secondary" onclick="clearStatus()">清除</button>
+            <!-- 重新选择状态按钮 -->
+            <!-- <button type="button" class="btn btn-secondary" onclick="resetStatus()">重新选择状态</button> -->
+        </div>
+    </section>
+    <section class="card" id="沟通渠道">
+        <h2>沟通渠道</h2>
+        <ul>
+            <li><a href="https://work.weixin.qq.com/" class="sevr">竞赛团队沟通渠道</a></li>
+            <li><a href="https://work.weixin.qq.com/" class="sevr">竞赛个人沟通渠道</a>
+            </li>
+        </ul>
+    </section>
+    <section class="card" id="信息管理">
+        <h2>信息管理</h2>
+        <ul>
+            <li><a href="#" class="sevr">指导团队获得的证书管理</a></li>
+        </ul>
+    </section>
+    <!-- 个人账户 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" id="account">
+
+                <h2>个人账户</h2>
+                <form>
+                    <div class="form-group rounded border p-3">
+                        <label for="exampleInputEmail1">邮箱地址</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            required>
+                    </div>
+                    <div class="form-group rounded border p-3">
+                        <label for="exampleInputPassword1">密码</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+                    <div class="form-check my-3">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">记住我</label>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <button type="submit" class="btn btn-primary mx-3 my-2 px-5">登录</button>
+                        <a href="#" class="btn btn-outline-primary mx-3 my-2 px-5">注册</a>
+                        <a href="#" class="btn btn-outline-danger mx-3 my-2 px-5">注销账号</a>
+                    </div>
+                    <hr>
+                    <h3>个人信息</h3>
+                    <div class="form-group rounded border p-3 my-3">
+                        <label for="exampleFormControlFile1">更改头像</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    <div class="form-group rounded border p-3 my-3">
+                        <label for="nameInput">名字</label>
+                        <input type="text" class="form-control" id="nameInput">
+                    </div>
+                    <div class="form-group rounded border p-3 my-3">
+                        <label for="genderSelect">性别</label>
+                        <select class="form-control" id="genderSelect">
+                            <option>男</option>
+                            <option>女</option>
+                        </select>
+                    </div>
+                    <div class="form-group rounded border p-3 my-3">
+                        <label for="ageInput">年龄</label>
+                        <input type="text" class="form-control" id="ageInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="school">学校/企业：</label>
+                        <input type="text" id="school" name="school" class="form-control"><br><br>
+                    </div>
+                    <div class="form-group rounded border p-3 my-3">
+                        <label for="researchInput">研究方向</label>
+                        <input type="text" class="form-control" id="researchInput">
+                    </div>
+                    <div class="form-group rounded border p-3 my-3">
+                        <label for="achievementTextarea">研究成果</label>
+                        <textarea class="form-control" id="achievementTextarea" rows="3"></textarea>
+                    </div>
+                    <div class="form-group rounded border p-3 my-3">
+                        <label for="careerTextarea">生涯成就</label>
+                        <textarea class="form-control" id="careerTextarea" rows="3"></textarea>
+                    </div>
+                    <div class="form-group rounded border p-3 my-3">
+                        <label for="contactInput">联系方式</label>
+                        <input type="text" class="form-control" id="contactInput">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="modify-info-checkbox">
+                        <label class="form-check-label" for="modify-info-checkbox">修改个人信息</label>
+                    </div>
+                    <div class="d-flex justify-content-center my-3">
+                        <button type="submit" class="btn btn-primary mx-3 px-5">提交</button>
+                        <button type="reset" class="btn btn-secondary mx-3 px-5">重置</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <section class="card" id="状态描述">
-    <h2>状态描述</h2>
-    <button class="btn dropdown-toggle" type="button" id="statusDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        选择状态
-      </button>
-      <div class="dropdown-menu" aria-labelledby="statusDropdown">
-        <a class="dropdown-item" href="#">能够担任竞赛团队指导老师</a>
-        <a class="dropdown-item" href="#">暂时不能够担任竞赛团队指导老师（预计维持期限，自定义）</a>
-        <a class="dropdown-item" href="#">不能够担任竞赛团队指导老师（无法预计维持期限）</a>
-      </div>
-  </section>
-  <section class="card" id="沟通渠道">
-    <h2>沟通渠道</h2>
-    <ul>
-      <li><a href="#" class="sevr">竞赛团队沟通渠道</a></li>
-      <li><a href="#" class="sevr">竞赛个人沟通渠道</a></li>
-    </ul>
-  </section>
-  <section class="card" id="信息管理">
-    <h2>信息管理</h2>
-    <ul>
-      <li><a href="#" class="sevr">指导团队获得的证书管理</a></li>
-    </ul>
-  </section>
-  
-  <!-- 个人账户 -->
-  <section class="card" id="个人账户">
-    <h2>个人账户</h2>
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">邮箱地址</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">密码</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" required>
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">记住我</label>
-      </div>
-      <button type="submit" class="btn btn-primary">登录</button>
-      <a href="#" class="btn btn-secondary">注册</a>
-      <a href="#" class="btn btn-secondary">注销账号</a>
-    </form>
-    <br>
-    <form>
-      <div class="form-group">
-        <label for="exampleFormControlFile1">更改头像</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-      </div>
-      <div class="form-group">
-        <label for="nameInput">名字</label>
-        <input type="text" class="form-control" id="nameInput">
-      </div>
-      <div class="form-group">
-        <label for="genderSelect">性别</label>
-        <select class="form-control" id="genderSelect">
-          <option>男</option>
-          <option>女</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="ageInput">年龄</label>
-        <input type="text" class="form-control" id="ageInput">
-      </div>
-      <div class="form-group">
-        <label for="researchInput">研究方向</label>
-        <input type="text" class="form-control" id="researchInput">
-      </div>
-      <div class="form-group">
-        <label for="achievementTextarea">研究成果</label>
-        <textarea class="form-control" id="achievementTextarea" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="careerTextarea">生涯成就</label>
-        <textarea class="form-control" id="careerTextarea" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="contactInput">联系方式</label>
-        <input type="text" class="form-control" id="contactInput">
-      </div>
-      <button type="submit" class="btn btn-primary">提交</button>
-      <button type="reset" class="btn btn-secondary">重置</button>
-    </form>
-  </section>
 
-  <footer>
-    <p>&copy; 2023 当面科技. All rights reserved.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2023 当面科技. All rights reserved.</p>
+    </footer>
+    <script>
+        var statusDiv = document.getElementById("状态描述");
+
+        function setStatus(status) {
+            statusDiv.innerHTML = "当前状态：" + status;
+        }
+
+        // 示例：设置状态为“在线”
+        setStatus("能够担任竞赛团队指导老师");
+
+        function clearStatus() {
+            const dropdownItems = document.querySelectorAll(".dropdown-item");
+            dropdownItems.forEach(item => item.classList.remove("active"));
+            statusDiv.innerHTML = "当前状态：未选择";
+            dropdownItems[0].classList.add("active");
+        }
+        // 打开或关闭下拉菜单
+        function toggleDropdownMenu(button) {
+            var dropdownMenu = button.nextElementSibling;
+            dropdownMenu.classList.toggle("show");
+        }
+
+        // 重新选择状态
+        function resetStatus() {
+            clearStatus();
+            var dropdownButton = document.querySelector(".dropdown-toggle");
+            toggleDropdownMenu(dropdownButton);
+        }
+
+        function setStatus(status) {
+            statusDiv.innerHTML = "当前状态：" + status;
+            // 关闭下拉菜单
+            var dropdownMenu = document.querySelector(".dropdown-menu");
+            dropdownMenu.classList.remove("show");
+        }
+    </script>
 </body>
 
 </html>
